@@ -1,13 +1,25 @@
 Installing Anchore CLI from source
 ==================================
 
-The Anchore grafeas CLI can be installed from source using the Python pip utility
+The Anchore grafeas CLI can be installed from source using the Python
+pip utility, and also requires the anchore-engine code to be installed
+as it uses anchore-engine DB models to construct grafeas documents.
+Below is an example installation if, say, one were running a fresh
+container base on centos:latest
 
 .. code::
 
+    yum -y install epel-release && yum -y install python-pip gcc python-devel openssl-devel git && pip install --upgrade pip && pip install --upgrade setuptools
+
+    git clone https://github.com/anchore/anchore-engine
+    cd anchore-engine
+    pip install --upgrade .
+    cd ..
+
     git clone https://github.com/anchore/anchore-grafeas-cli
     cd anchore-grafeas-cli
-    pip install --user --upgrade . 
+    pip install --upgrade . 
+    cd ..
 
 Using Anchore Grafeas CLI
 ==================================
@@ -46,7 +58,7 @@ generate package-vulnerability occurrence JSON documents.
     anchore-grafeas occurrence package-vulnerabilities
     anchore-grafeas occurrence package-vulnerabilities <full line (imageId packageName vulnId) from previous>
 
-Examples with curl
+Examples with curl uploads to grafeas service
 
 .. code::
 
