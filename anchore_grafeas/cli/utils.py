@@ -40,7 +40,6 @@ def session_scope():
     """Provide a transactional scope around a series of operations."""
     global Session
     session = Session()
-
     try:
         yield session
         session.commit()

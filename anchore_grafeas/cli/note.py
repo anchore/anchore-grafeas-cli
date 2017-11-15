@@ -11,14 +11,10 @@ import datetime
 import json
 
 import anchore_grafeas.cli.utils
-
-import anchore_engine.clients.policy_engine
-from anchore_engine.services.policy_engine.api.models import ImageUpdateNotification, FeedUpdateNotification, ImageVulnerabilityListing, ImageIngressRequest, ImageIngressResponse, LegacyVulnerabilityReport
-from anchore_engine.db import DistroMapping
-from anchore_engine.db import Vulnerability, FixedArtifact, VulnerableArtifact, ImagePackage, ImagePackageVulnerability
-
-import anchore_grafeas.vendored.grafeas_client.client_python.v1alpha1.swagger_client
 from anchore_grafeas.cli.utils import session_scope
+import anchore_grafeas.vendored.grafeas_client.client_python.v1alpha1.swagger_client
+
+from anchore_grafeas.anchore_engine.db import ImagePackage, Vulnerability
 
 config = {}
 _logger = logging.getLogger(__name__)
