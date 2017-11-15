@@ -27,8 +27,7 @@ supplied docker-compose.yaml, you will have to add a section to the
 anchore-db service (and restart the services) to expose the DB port
 5432 in order for it to be accessed externally.  If you do not have
 anchore-engine service running already, please visit the
-[anchore-engine github
-page](https://github.com/anchore/anchore-engine) for instructions on
+`anchore-engine github page <https://github.com/anchore/anchore-engine>`_ for instructions on
 how to install anchore-engine.
 
 Once anchore-engine is up and running (we also recommend adding some
